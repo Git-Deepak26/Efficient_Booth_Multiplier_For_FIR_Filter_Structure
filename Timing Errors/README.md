@@ -3,6 +3,8 @@
 ## Project Overview
 This project implements a high-speed 8-bit **Radix-16 Booth Multiplier** in Verilog. By utilizing a high-radix encoding scheme, the design reduces the number of partial products to just two, minimizing the logic required for the final summation and improving area efficiency.
 
+<img width="1659" height="729" alt="Screenshot 2026-01-10 203730" src="https://github.com/user-attachments/assets/3edd3f63-4f2f-4035-8d38-3a79aba97402" />
+
 ## FPGA Implementation Details
 The design was synthesized and implemented using the **Vivado Design Suite** targeting the **Xilinx Artix-7** (XC7A200T) FPGA.
 

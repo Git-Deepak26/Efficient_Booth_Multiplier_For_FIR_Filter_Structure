@@ -26,13 +26,7 @@ The design was verified and benchmarked using a dual-methodology approach:
 | **64-Bit Area Savings** | 58.76% | 35.74% | 31.89% |
 | **64-Bit Delay Imp.** | 45.77% | 11.99% | 21.32% |
 
-Initial implementation results for the Radix-16p design revealed a Setup Time Violation with a Worst Negative Slack (WNS) of -0.742 ns.
-* **Total Negative Slack (TNS):** -80.105 ns.
-* **Failing Endpoints:** 233.
-* **Analysis:** The negative WNS indicates the critical path—specifically the logic depth in the partial product summation—exceeds the clock period.
-* **Proposed Solution:** Implementing pipelining to break the long combinational paths into smaller, synchronous segments to meet the required timing constraints.
-
-
+Initial implementation results for the Radix-16p design revealed a Setup Time Violation with a Worst Negative Slack (WNS) of -0.742 ns which i have specifically Discussed in Timing Errors File.
 
 * **Radix-4:** Best suited for compact, high-speed designs with minimal bit-widths (8-bit to 24-bit).
 * **Radix-8:** Offers a balanced trade-off between area, speed, and power.

@@ -1,7 +1,7 @@
 # Efficient_Booth_Multiplier_For_FIR_Filter_Structure
 This project is Specifically focused on Designing of efficient Booth Multiplier Module for FIR structure which is used for Signal Processing Purpose mainly in Audio Filtering and Image processing , here by provided are The Verilog Files for the Same so Go through README for Understanding,The primary objective is to optimize the Power, Performance, and Specifically Area (PPA) of computational blocks essential for signal processing applications like wearable devices, IoT, and TWS chips.
 
-# This is the Conventional Design which other Research Papers and authors Proposed
+# This is the Conventional Design which were Proposed by authors we Reffered.
 <img width="1123" height="485" alt="image" src="https://github.com/user-attachments/assets/aecc0e47-9932-41ee-9226-10e14258f13c" />
 
 # This is the Block diagram of Our Proposed Design

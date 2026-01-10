@@ -12,7 +12,7 @@ The project explores various Booth Encoding schemes, specifically comparing Radi
 * **Centralized Partial Product Generation (CPPG):** Implemented for parallel precomputation of partial products to improve scalability and performance.
                                                   ** So the Info Regarding CPPG which i have explained in PPT which give you better insights how we have Designed. 
 * **Bit Append Method:** Utilizes a "bit append" technique instead of traditional RTL shift operators to eliminate extra shift logic and reduce propagation delay.
-* **Adder Optimization:** Compares different adder topologies, including Ripple Carry Adders (RCA), Carry Look-Ahead Adders (CLA), and Carry Select Adders (CSLA), to find the best balance of speed and area.
+* **Adder Optimization:** Compares different adder topologies, including Ripple Carry Adders (RCA), Carry Look-Ahead Adders (CLA), and Carry Select Adders (CSLA), to find the best balance of speed and area for our Design.
 
 
 
@@ -40,8 +40,3 @@ Initial implementation results for the Radix-16p design revealed a Setup Time Vi
 
 * Integration of high-speed adders like Kogge-Stone or Brent-Kung to further accelerate partial product summation.
 * Application of low-power approximate adders for highly energy-efficient signal processing.
-
-* Deepak Nair (Sarvajanik College of Engineering and Technology)
-* Jeet Gandhi
-* Nehal Shah
-* Niket Singla (SVNIT Surat)

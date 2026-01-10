@@ -1,1 +1,45 @@
-Timin
+This README document outlines the process of identifying, analyzing, and resolving a timing violation in a **64-bit Radix-16 Pipelined Booth Multiplier** implemented on an **Artix-7 FPGA**.
+
+---
+# Timing Analysis and Closure: 64-bit Radix-16 Multiplier
+
+## 1. Issue Identification
+
+During the implementation phase in Xilinx Vivado, the design failed to meet the target clock frequency of **100 MHz** (10ns period).
+
+Worst Negative Slack (WNS): -0.742 ns.
+Total Negative Slack (TNS): -80.105 ns.
+Failing Endpoints: 233.
+
+## 2. Root Cause Analyzed
+
+Based on the **Timing Report** and **Design Runs**, several bottlenecks were identified:
+
+*Deep Combinational Paths:** The unconstrained design showed logic levels as high as **20 to 21**.
+*High Net Delay:** A significant portion of the path delay (**15.144 ns**) was attributed to routing. This is common in 128-bit wide summation trees where signals must traverse large areas of the FPGA fabric.
+*High Fanout:** Input bits (e.g., `a[14]`) exhibited a fanout of **107**, driving multiple partial product generation muxes simultaneously, which degraded signal transition times.
+*Arithmetic Complexity:** The Radix-16 architecture requires complex partial products (like , ) followed by multiple levels of 128-bit wide additions, leading to long carry-chain delays.
+
+## 3. How we Resolved it : Pipelining & Register Balancing
+
+To resolve the **-0.742 ns** violation, the design was optimized using the following RTL methodologies:
+
+1. Intermediate Pipelining : Introduced register "buffers" (Flip-Flops) between the Partial Product Generation (PPG) stage and the Summation Tree.
+2. Summation Tree Segmentation : Broke down the 4-level addition tree into distinct clocked stages. This effectively reduced the logic levels between any two registers, cutting the critical path delay.
+3. Register Balancing : Re-distributed logic to ensure that no single clock cycle contained more than one 128-bit addition, allowing the Artix-7 carry-chains to complete within the 10ns window.
+
+## 4. Implementation Results
+
+After applying the 4-stage pipeline, the following improvements were observed:
+
+*Timing Closure: WNS transitioned from negative to positive, successfully hitting the **100 MHz** target.
+*Resource Efficiency: Leveraging DSP48E1 slices instead of pure LUT-based arithmetic further reduced routing congestion and improved power efficiency.
+*Optimization: Achieved a 46.8% LUT reduction compared to standard high-performance architectures while maintaining single-cycle throughput.
+
+
+### Tools Used
+
+HDL: Verilog.
+Synthesis/Implementation: Xilinx Vivado.
+Target Hardware: Artix-7 (Basys-3).
+Constraints: XDC (Xilinx Design Constraints) for clock and I/O delay definition.

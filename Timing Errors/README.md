@@ -39,12 +39,9 @@ To resolve these errors and ensure hardware reliability, the design was transiti
 * **Stage 2:** Registering intermediate sums.
 * **Stage 3:** Final 16-bit Product Summation.
 
-By inserting registers at these strategic points, the combinational delay is broken into smaller segments, effectively turning the **Negative Slack** into **Positive Slack** and allowing the multiplier to meet the timing constraints required for real-time signal processing in an SDR transceiver chain.
+By inserting registers at these strategic points, the combinational delay is broken into smaller segments, effectively turning the **Negative Slack** into **Positive Slack** and allowing the multiplier to meet the timing constraints required for real-time signal processing.
 
 ---
-
-## Application in SDR
-In a digital transceiver, this multiplier acts as a **Digital Mixer** or a **MAC (Multiply-Accumulate) unit** for RRC filtering. Meeting timing is critical in these applications to ensure the waveform is processed synchronously with the ADC/DAC clock.
 
 ## Tools Used
 * **HDL:** Verilog

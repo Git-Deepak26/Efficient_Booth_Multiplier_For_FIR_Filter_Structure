@@ -10,7 +10,7 @@ This project is Specifically focused on Designing of efficient Booth Multiplier 
 The project explores various Booth Encoding schemes, specifically comparing Radix-4, Radix-8, and Radix-16 implementations.
 
 * **Centralized Partial Product Generation (CPPG):** Implemented for parallel precomputation of partial products to improve scalability and performance.
-                                                  ** So the Info Regarding CPPG which i have explained in PPT which give you better insights how we have Designed. 
+                                                  So the Info Regarding CPPG which i have explained in PPT which will give you better insights how we have Designed. 
 * **Bit Append Method:** Utilizes a "bit append" technique instead of traditional RTL shift operators to eliminate extra shift logic and reduce propagation delay.
 * **Adder Optimization:** Compares different adder topologies, including Ripple Carry Adders (RCA), Carry Look-Ahead Adders (CLA), and Carry Select Adders (CSLA), to find the best balance of speed and area for our Design.
 
